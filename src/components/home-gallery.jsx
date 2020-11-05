@@ -1,7 +1,7 @@
 
 import {Carousel} from 'react-bootstrap';
 
-function App() {
+function homeGallery() {
     
   return (
     <Carousel>
@@ -56,4 +56,4 @@ function App() {
   );
 }
 
-export default App;
+export default homeGallery;
