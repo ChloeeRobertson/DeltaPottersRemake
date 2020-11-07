@@ -9,7 +9,7 @@ function App() {
   return (
       <Container fluid style={{backgroundColor: "#fdf7f2"}}>
         <Navbar/>
-        <Row> 
+        <Row className="align-items-center"> 
           <Col lg={6}>
             <HomeGallery/>
           </Col>
