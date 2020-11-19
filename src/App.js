@@ -3,13 +3,15 @@ import './App.css';
 import HomeGallery from './components/home-gallery';
 import Navbar from './components/navbar';
 import Jumbo from './components/membership-jumbo';
+import GoogleMaps from './components/google-maps';
 import {Container, Row, Col} from 'react-bootstrap';
 
 function App() {
   return (
       <Container fluid style={{backgroundColor: "#fdf7f2"}}>
         <Navbar/>
-        <Row className="align-items-center"> 
+        <Row><br/></Row>
+        <Row className=" align-items-center"> 
           <Col lg={6}>
             <HomeGallery/>
           </Col>
@@ -23,6 +25,26 @@ function App() {
             <Row>
               <Jumbo/>
             </Row>
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <Col lg={8}>
+          </Col>
+          <Col lg={4}>
+            <GoogleMaps 
+              id="myMap"
+              options={{
+                center: { lat: 49.035370, lng: -123.066794 },
+                zoom: 8
+              }}
+              onMapLoad={map => {
+                var marker = new window.google.maps.Marker({
+                  position: { lat: 49.035370, lng: -123.066794 },
+                  map: map,
+                  title: 'Delta Pottery Association!'
+                });
+              }}
+            />
           </Col>
         </Row>
       </Container>
